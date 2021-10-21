@@ -10,8 +10,7 @@ class Question extends Component {
     return (
       <div className="question">
         <div className="question-header">
-          <p>{name} asks:</p>
-          
+          <p>{name} asks:</p>     
         </div> 
         <img
           src = {avatar}
@@ -19,15 +18,15 @@ class Question extends Component {
           className = 'avatar'
         /> 
         <div className="question-body">
-          <div className="card-title">Would you rather</div>
+          <div className="question-title">Would you rather</div>
           <div className="question-text">{optionOne.text}</div>
           <div className="question-text">{optionTwo.text}</div>
-        </div>
-        <div className="view-poll-button">
+          <div className="view-poll-button">
             <a href="#" className="btn btn-primary">View Poll</a>
+          </div>
         </div>
-      </div>
 
+      </div>
     )
   }
 }
