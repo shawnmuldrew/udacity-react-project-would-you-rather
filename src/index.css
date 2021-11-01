@@ -7,9 +7,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  text-decoration: none;
+  color: #252525;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li:first-child {
+  padding-left: 0;
 }
 
 ul {
@@ -17,10 +65,22 @@ ul {
   list-style-type: none;
 }
 
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
 .question-list {
-  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 590px;
+  padding: 10px;
   justify-content: space-around;
   padding: 1em 0;
   text-align: left;
@@ -28,9 +88,9 @@ ul {
 
 
 .question {
-  display: grid;
-  width: 500px;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
   background: #eee;
   padding: .6em 1em .6em .6em;
   margin-bottom: 1em;
@@ -40,33 +100,34 @@ ul {
 }
 
 .question-header {
+  flex: 0 0 100%;
   background: white;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  height: 40px;
 }
-.question-header * {margin:6px 12px}
+.question-header * {margin:3px 6px}
+
+.question-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.column1 {
+  flex-direction: column;
+}
+
+.column2 {
+  flex-direction: column;
+}
 
 .avatar {
   height: 50px;
   border-radius: 25px;
   margin: 10px;
-  grid-column-start: 1;
-  grid-row-start: 3;
-  grid-row-end: 6;
 }
 
 .question-title {
   font-weight: bold;
   margin: 6px 6px 0px 0px
-}
-
-.question-body {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  grid-row-start: 3;
-  grid-row-end: 6;
 }
 
 .question-text {
@@ -81,6 +142,7 @@ ul {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  margin-bottom: 10px;
 }
 
 /* Style the buttons that are used to open the tab content */

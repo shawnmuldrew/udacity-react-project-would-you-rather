@@ -4,25 +4,28 @@ import { formatQuestion } from '../utils/helpers'
 
 class Question extends Component {
   render() {
-    console.log(this.props)
     const { question } = this.props
-    const { author, avatar, name, optionOne, optionTwo } = question 
+    const { avatar, name, optionOne, optionTwo } = question 
     return (
-      <div className="question">
+      <div className={`question ${question.answered ? 'answered' : 'unanswered'}`}>
         <div className="question-header">
           <p>{name} asks:</p>     
         </div> 
-        <img
-          src = {avatar}
-          alt = {`Avatar of ${name}`}
-          className = 'avatar'
-        /> 
         <div className="question-body">
-          <div className="question-title">Would you rather</div>
-          <div className="question-text">{optionOne.text}</div>
-          <div className="question-text">{optionTwo.text}</div>
-          <div className="view-poll-button">
-            <a href="#" className="btn btn-primary">View Poll</a>
+          <div className="column1">
+            <img
+              src = {avatar}
+              alt = {`Avatar of ${name}`}
+              className = 'avatar'
+            /> 
+          </div>
+          <div className="column2">
+            <div className="question-title">Would you rather</div>
+            <div className="question-text">{optionOne.text}</div>
+            <div className="question-text">{optionTwo.text}</div>
+            <div className="view-poll-button">
+            <button className="btn btn-primary" type="submit" >View Poll</button>
+            </div>
           </div>
         </div>
 
