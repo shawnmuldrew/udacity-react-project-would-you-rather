@@ -23,10 +23,10 @@ class Question extends Component {
             <div className="question-title">Would you rather</div>
             <div className="question-text">{optionOne.text}</div>
             <div className="question-text">{optionTwo.text}</div>
-            <div className="view-poll-button">
-            <button className="btn btn-primary" type="submit" >View Poll</button>
-            </div>
           </div>
+        </div>
+        <div className="view-poll-button">
+          <button className="btn btn-primary" type="submit" >View Poll</button>
         </div>
 
       </div>

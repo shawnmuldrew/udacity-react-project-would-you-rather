@@ -18,28 +18,6 @@ a {
   padding: 10px;
 }
 
-.btn {
-  text-transform: uppercase;
-  margin: 35px auto;
-  padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
-  cursor: pointer;
-  background: #fff;
-  font-size: 16px;
-  width: 250px;
-  position: relative;
-}
-
-.btn:hover {
-  border-color: rgba(0,0,0,.5);
-  text-decoration: none;
-}
-
-.btn:focus {
-  outline: 0;
-  font-weight: 700;
-  border-width: 2px;
-}
 
 .center {
   text-align: center;
@@ -109,10 +87,12 @@ li {
 .question-body {
   display: flex;
   flex-direction: row;
+  flex: 0 0 100%;
 }
 
 .column1 {
   flex-direction: column;
+  margin-right: 30px;
 }
 
 .column2 {
@@ -127,15 +107,40 @@ li {
 
 .question-title {
   font-weight: bold;
-  margin: 6px 6px 0px 0px
+  margin: 10px 6px 6px 0px;
 }
 
 .question-text {
-  margin: 0px 0px 0px 10px
+  margin: 0px 0px 5px 15px;
 }
 
 .view-poll-button {
-  margin: 6px 6px 0px 10px
+  margin: 10px 10px 0px 0px;
+  flex-direction: row;
+  flex: 0 0 100%;
+}
+
+.view-poll-button .btn {
+  width: 100%
+}
+
+.new-question {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #eee;
+  padding: .6em 1em .6em .6em;
+  margin-bottom: 1em;
+  border-radius: .3em;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
+  border: solid 1px #ccc;
+}
+
+.new-question input {
+  flex: 1;
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
 }
 
 .tab {
