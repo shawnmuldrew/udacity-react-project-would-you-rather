@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
 import NewQuestion from './NewQuestion'
+import QuestionRouting from './QuestionRouting'
 import Nav from './Nav'
 import { LoadingBar } from 'react-redux-loading-bar'
 
@@ -23,6 +24,7 @@ class App extends Component {
               ? null
               : <div>
                   <Route path="/" exact component={Dashboard} />
+                  <Route path = '/question/:id' exact component={QuestionRouting} />
                   <Route path="/new" exact component={NewQuestion} />
                 </div>
             } 
