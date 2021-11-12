@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { formatQuestion } from '../utils/helpers'
+import { withRouter } from 'react-router-dom'
 
 class Question extends Component {
+
+  gotoQuestion = (e, id) => {
+    e.preventDefault()
+    this.props.history.push(`/question/${id}`)
+  }
+
   render() {
     const { question } = this.props
     const { avatar, name, optionOne, optionTwo } = question 
@@ -13,6 +20,7 @@ class Question extends Component {
         </div> 
         <div className="question-body">
           <div className="column1">
+          {console.log(avatar)}
             <img
               src = {avatar}
               alt = {`Avatar of ${name}`}
@@ -26,7 +34,7 @@ class Question extends Component {
           </div>
         </div>
         <div className="view-poll-button">
-          <button className="btn btn-primary" type="submit" >View Poll</button>
+          <button className="btn btn-primary" type="submit" onClick={(e) => this.gotoQuestion(e, question.id)}>View Poll</button>
         </div>
 
       </div>
@@ -45,4 +53,4 @@ function mapStateToProps({authedUser, users, questions}, { id }) {
   }
 }
 
-export default connect(mapStateToProps)(Question)
+export default withRouter(connect(mapStateToProps)(Question))

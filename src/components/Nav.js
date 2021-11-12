@@ -12,7 +12,12 @@ export default function Nav () {
         </li>
         <li>
         <NavLink to="/new" activeClassName="active">
-            New Tweet
+            New Question
+          </NavLink>
+        </li>
+        <li>
+        <NavLink to="/leaderboard" activeClassName="active">
+            Leader Board
           </NavLink>
         </li>
       </ul>

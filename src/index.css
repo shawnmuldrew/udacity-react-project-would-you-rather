@@ -57,7 +57,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 590px;
+  max-width: 490px;
   padding: 10px;
   justify-content: space-around;
   padding: 1em 0;
@@ -97,6 +97,7 @@ li {
 
 .column2 {
   flex-direction: column;
+  width: 100%;
 }
 
 .avatar {
@@ -112,6 +113,7 @@ li {
 
 .question-text {
   margin: 0px 0px 5px 15px;
+  flex: 0 0 100%;
 }
 
 .view-poll-button {
@@ -141,6 +143,28 @@ li {
   display: block;
   margin-bottom: 10px;
   padding: 5px;
+}
+
+.question-results {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  width: 100%;
+  background: #eee;
+  padding: .6em 1em .6em .6em;
+  margin-bottom: 1em;
+  border-radius: .3em;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
+  border: solid 1px #ccc;
+}
+
+.poll-ratio {
+  margin: 0px 0px 5px 15px;
+  flex: 0 0 100%;
+}
+
+.progress {
+  background-color: #f9fafb;
 }
 
 .tab {

@@ -10,9 +10,9 @@ class QuestionRouting extends Component {
     return (
       <div>
           {question.answered ?
-            <QuestionResult/>
+            <QuestionResult id={question.id}/>
           :
-            <QuestionPoll/>
+            <QuestionPoll id={question.id}/>
         }
       </div>
     )
