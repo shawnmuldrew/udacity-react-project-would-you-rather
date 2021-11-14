@@ -7,7 +7,7 @@ class UserStats extends Component {
 
   render() {
     const { user } = this.props
-    const { avatar, name, answerCount, questionCount } = user
+    const { avatar, name, answerCount, questionCount, totalCount } = user
     return (
       <div className="question">
         <div className="question-header">
@@ -23,8 +23,9 @@ class UserStats extends Component {
             /> 
           </div>
           <div className="column2">
-            <div className="question-text">Answered: {answerCount}</div>
-            <div className="question-text">Created: {questionCount}</div>
+            <div className="leader-total">Total: {totalCount}</div>
+            <div className="leader-count">Answered: {answerCount}</div>
+            <div className="leader-count">Created: {questionCount}</div>
           </div>
         </div>
       </div>

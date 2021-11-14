@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import UserStats from './UserStats'
+import { Redirect } from 'react-router-dom'
 
 class LeaderBoard extends Component {
 
@@ -13,7 +14,9 @@ class LeaderBoard extends Component {
   }
 
   render() {
-    // const users = Object.keys(this.props.users)
+    if(this.props.authedUser === null){
+      return <Redirect to={{pathname:"/login", state:  {redirect:"/leaderboard"}}} />
+    }
     const userIdList = this.sortUsers(this.props.users)
     return (
       <div className="question-list">

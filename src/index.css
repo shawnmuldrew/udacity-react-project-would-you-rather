@@ -54,7 +54,6 @@ li {
 }
 
 .question-list {
-  display: flex;
   flex-wrap: wrap;
   width: 100%;
   max-width: 490px;
@@ -156,6 +155,17 @@ li {
   border-radius: .3em;
   box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
   border: solid 1px #ccc;
+}
+
+.leader-count {
+  margin: 0px 0px 5px 15px;
+  flex: 0 0 100%;
+}
+
+.leader-total {
+  margin: 0px 0px 5px 15px;
+  flex: 0 0 100%;
+  font-weight: bold;
 }
 
 .poll-ratio {
