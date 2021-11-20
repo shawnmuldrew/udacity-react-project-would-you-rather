@@ -7,35 +7,34 @@ import { Container } from 'react-bootstrap'
 
 class NavComp extends Component {
   render() {
-    const {authedUser} = this.props
-    console.log(authedUser)
+    const { authedUser } = this.props
     return (
       <Navbar bg="light" expand="sm" className="nav">
         <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" exact activeClassName="active">
+            <Nav.Link as={NavLink} to="/" exact>
               Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/add" activeClassName="active">
+            <Nav.Link as={NavLink} to="/add">
               New Question
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/leaderboard" activeClassName="active">
+            <Nav.Link as={NavLink} to="/leaderboard">
               Leader Board
             </Nav.Link>
           </Nav>
-          <Nav className="justify-content-end">
-            {authedUser === null
+          {authedUser === null
             ? null
-            : <Navbar.Text className="navuser">
-                User: {authedUser}
-              </Navbar.Text>
-            }
-            <Nav.Link as={NavLink} to="/logout" activeClassName="active">
-              Logout
-            </Nav.Link>
-          </Nav>
+            : <Nav className="justify-content-end">
+                <Navbar.Text className="navuser">
+                  User: {authedUser}
+                </Navbar.Text>
+                <Nav.Link as={NavLink} to="/logout">
+                  Logout
+                </Nav.Link>   
+              </Nav>
+          }
         </Navbar.Collapse>
         </Container>
       </Navbar>

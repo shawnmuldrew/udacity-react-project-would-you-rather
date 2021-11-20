@@ -20,7 +20,6 @@ class Question extends Component {
         </div> 
         <div className="question-body">
           <div className="column1">
-          {console.log(avatar)}
             <img
               src = {avatar}
               alt = {`Avatar of ${name}`}

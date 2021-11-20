@@ -10,7 +10,6 @@ class Login extends Component {
   }
   handleSelectChange = (e) => {
     const selectedUser = e.target.value
-    console.log(e.target.value)
 
     this.setState(() => ({
       selectedUser
@@ -29,7 +28,6 @@ class Login extends Component {
       selectedUser: '',
     }))
     return this.props.history.push(this.props.location.state === undefined ? '/' : this.props.location.state.redirect);
-    // return <Redirect to={{pathname:"/dashboard", state:  {redirect:"/login"}}} />
   }
 
   render() {

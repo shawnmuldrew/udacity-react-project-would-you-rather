@@ -5,7 +5,8 @@ import { Redirect } from 'react-router-dom'
 class PageNotFound extends Component {
 
   render() {
-    if(this.props.authedUser === null){
+    const { authedUser } = this.props
+    if(authedUser === null){
       return <Redirect to={{pathname:"/login", state:  {redirect:"/pagenotfound"}}} />
     }
     return (

@@ -7,11 +7,10 @@ import { Redirect } from 'react-router-dom'
 
 class QuestionRouting extends Component {
   render() {
-    if(this.props.authedUser === null){
-      return <Redirect to={{pathname:"/login", state:  {redirect:`/question/${this.props.id}`}}} />
+    const { id, authedUser, question } = this.props
+    if(authedUser === null){
+      return <Redirect to={{pathname:"/login", state:  {redirect:`/question/${id}`}}} />
     }
-    const { question } = this.props
-    console.log(question)
     return (
       <div>
           {question.answered ?
@@ -27,8 +26,6 @@ class QuestionRouting extends Component {
 function mapStateToProps({authedUser, users, questions}, props) {
   const {id} = props.match.params
   const question = questions[id]
-  console.log(id)
-  console.log(question)
 
   return {
     id,

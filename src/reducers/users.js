@@ -9,8 +9,6 @@ export default function users (state = {}, action) {
         ...action.users
       }
     case ADD_QUESTION :
-      console.log('In add question for users')
-      console.log(action)
       return {
         ...state,
         [action.authedUser]: {

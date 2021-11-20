@@ -29,7 +29,7 @@ class NewQuestion extends Component {
     e.preventDefault()
 
     const { optionOneText, optionTwoText } = this.state
-    const { dispatch } = this.props
+    const { dispatch} = this.props
 
     dispatch(handleAddQuestion(optionOneText, optionTwoText))
 
@@ -41,11 +41,11 @@ class NewQuestion extends Component {
   }
 
   render() {
-    if(this.props.authedUser === null){
+    const { authedUser } = this.props
+    if(authedUser === null){
       return <Redirect to={{pathname:"/login", state:  {redirect:"/add"}}} />
     }
     const { optionOneText, optionTwoText, toHome } = this.state
-    console.log(this.state)
     if (toHome === true) {
       return <Redirect to='/' />
     }

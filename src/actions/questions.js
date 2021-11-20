@@ -48,8 +48,6 @@ function addVote ({ id, authedUser, poll }){
 }
 
 export function handleAddVote (info) {
-  console.log('In handleAddVote')
-  console.log(info)
   return (dispatch) => {
     dispatch(addVote(info))
     return saveQuestionAnswer({

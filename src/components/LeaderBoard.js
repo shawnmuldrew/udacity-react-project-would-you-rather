@@ -14,10 +14,11 @@ class LeaderBoard extends Component {
   }
 
   render() {
-    if(this.props.authedUser === null){
+    const { users, authedUser } = this.props
+    if(authedUser === null){
       return <Redirect to={{pathname:"/login", state:  {redirect:"/leaderboard"}}} />
     }
-    const userIdList = this.sortUsers(this.props.users)
+    const userIdList = this.sortUsers(users)
     return (
       <div className="question-list">
         <h3 className="center">Leader Board</h3>
