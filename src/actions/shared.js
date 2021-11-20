@@ -3,8 +3,6 @@ import { setAuthedUser } from "./authedUser";
 import { receiveQuestions } from "./questions";
 import { receiveUsers } from "./users";
 
-/* TODO: Build signed to set AUTHED USER */
-
 const AUTHED_ID = null
 
 export function handleInitialData () {

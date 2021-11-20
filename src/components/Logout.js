@@ -9,7 +9,7 @@ class Logout extends Component {
     const { dispatch } = this.props
     dispatch(setAuthedUser(null))
     return (
-      <Redirect to='/login' />
+      <Redirect to={{pathname:"/login", state:  {redirect:"/"}}} />
     )
   }
 }

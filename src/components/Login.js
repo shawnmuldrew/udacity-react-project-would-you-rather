@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
+import { withRouter } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -20,42 +21,40 @@ class Login extends Component {
     e.preventDefault()
 
     const { selectedUser } = this.state
-    const { dispatch, history } = this.props
+    const { dispatch } = this.props
 
     dispatch(setAuthedUser(selectedUser))
 
     this.setState(() => ({
       selectedUser: '',
     }))
-
-    return history.push(this.props.location.state === undefined ? '/' : this.props.location.state.redirect);
+    return this.props.history.push(this.props.location.state === undefined ? '/' : this.props.location.state.redirect);
+    // return <Redirect to={{pathname:"/dashboard", state:  {redirect:"/login"}}} />
   }
 
   render() {
     const userList = Object.keys(this.props.users)
     return (
-              <div className="row">
-                <div className="col-md-6 offset-md-3">      
-                  <h3>Login to Would You Rather? Application</h3><br />        
-                  <div className="form-row">
-                    <div className="form-group col-md-6">
+            <div className="question-list">
+              <h3 className="center"> Sign In</h3>
+              <div className="login">
+                <div>      
+                  <h3>Would You Rather?</h3><br />        
+                    <div className="form-row">
                         <label>Sign In:</label>
-                        <select className="form-control" name="userPick" onChange={this.handleSelectChange}>
-                            <option selected>Select User</option>
+                        <select defaultValue={'Select User'} className="form-control" name="userPick" onChange={this.handleSelectChange}>
+                            <option disabled>Select User</option>
                             {userList.map((id) => (
                               <option key={id} value={id}>{id}</option>  
                             ))}
                         </select>
-                    </div>
                   </div>
-
-                <div className="form-row">
-                      <div className="col-md-12 text-center">
-                          <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
-                      </div>
+                  <div className="form-row">
+                      <button type="submit" disabled={this.state.selectedUser === ''} className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
                   </div>
-                  </div>
+                </div>
               </div>
+            </div>
     )
   }
 }
@@ -67,4 +66,4 @@ function mapStateToProps({ users, authedUser }) {
   }
 }
 
-export default connect(mapStateToProps)(Login)
+export default withRouter(connect(mapStateToProps)(Login))

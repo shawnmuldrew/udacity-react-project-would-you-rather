@@ -42,7 +42,7 @@ class NewQuestion extends Component {
 
   render() {
     if(this.props.authedUser === null){
-      return <Redirect to={{pathname:"/login", state:  {redirect:"/new"}}} />
+      return <Redirect to={{pathname:"/login", state:  {redirect:"/add"}}} />
     }
     const { optionOneText, optionTwoText, toHome } = this.state
     console.log(this.state)
@@ -51,9 +51,9 @@ class NewQuestion extends Component {
     }
     
     return (
-      <div>
-        <h3 className='center'>Create a New Question</h3>
-        <form className='new-question' onSubmit={this.handleSubmit}>
+      <div className="question-list">
+        <h3 className="center">Create a New Question</h3>
+        <form className="new-question" onSubmit={this.handleSubmit}>
           <p>Would you rather</p>
           <input type="text" id="optionOne" name="optionOne" placeholder="Enter Option One Text" value={optionOneText} onChange={this.handleChangeOne} maxLength={100}/>
           <p>OR</p>

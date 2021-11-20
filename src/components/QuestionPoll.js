@@ -42,6 +42,7 @@ class QuestionPoll extends Component {
     
     return (
       <div className="question-list">
+        <h3 className="center">Answer Poll</h3>
         <div className="question">
           <div className="question-header">
             <p>Question from {name}</p>     
@@ -71,7 +72,7 @@ class QuestionPoll extends Component {
             </div>
           </div>
           <div className="view-poll-button">
-            <button className="btn btn-primary" type="submit" onClick={this.handleSubmit}>Submit</button>
+            <button className="btn btn-primary" disabled={this.state.poll === ''} type="submit" onClick={this.handleSubmit}>Submit</button>
           </div>
         </div>
       </div>
