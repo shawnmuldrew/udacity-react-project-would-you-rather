@@ -5,9 +5,11 @@ import { Redirect } from 'react-router-dom'
 
 class Logout extends Component {
 
+  componentDidMount() {
+    this.props.dispatch(setAuthedUser(null))
+  }
+  
   render() {
-    const { dispatch } = this.props
-    dispatch(setAuthedUser(null))
     return (
       <Redirect to={{pathname:"/login", state:  {redirect:"/"}}} />
     )
